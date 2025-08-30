@@ -1,0 +1,8 @@
+.env
+.env.local
+.env.production
+*.log
+__pycache__/
+.venv/
+venv/
+.cursor/
