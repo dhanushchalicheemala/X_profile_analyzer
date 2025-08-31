@@ -66,7 +66,7 @@ class X_tweets:
                 user.data.id,
                 max_results=max_tweets,
                 tweet_fields=["created_at", "text", "public_metrics", "context_annotations"],
-                exclude=["retweets", "replies"]
+                exclude=["retweets"]  # Include replies now
             )
             return tweets.data if tweets.data else []
         except tweepy.TooManyRequests:
@@ -76,6 +76,8 @@ class X_tweets:
         except Exception as e:
             print(f"❌ Error fetching tweets: {e}")
             return []
+
+
 
 class X_profile_analytics:
     def __init__(self, tweets):
@@ -124,5 +126,7 @@ class X_profile_analytics:
         df = pd.DataFrame(data)
         df['created_at'] = pd.to_datetime(df['created_at'])
         return df
+
+
 
 print("✅ X profile data is ready!")

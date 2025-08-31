@@ -15,22 +15,22 @@ class ContentAnalysisAgent:
         print(f"{self.name} is ready!")
 
         
-    def analyze_content_strategy(self,tweets_df: pd.DataFrame,username: str) -> dict:
-        """Funtion to anlyze content strategy"""
-        print(f"{self.name} is anlyzing content strategy of @{username}")
+    def analyze_content_strategy(self, tweets_df: pd.DataFrame, username: str) -> dict:
+        """Function to analyze content strategy"""
+        print(f"{self.name} is analyzing content strategy of @{username}")
 
         content_data = self.prepare_content_data(tweets_df)
 
-        prompt = self.create_analysis_prompt(content_data,username)
+        prompt = self.create_analysis_prompt(content_data, username)
 
         ai_insights = self.gen_ai_analysis(prompt)
 
         results = {
-            "agent" : self.name,
-            "username" : username,
-            "analysis" : ai_insights,
-            "data_summary" : content_data,
-            "timestamp" : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            "agent": self.name,
+            "username": username,
+            "analysis": ai_insights,
+            "data_summary": content_data,
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
         print(f"Analysis completed of {self.name} for @{username}")
@@ -85,6 +85,8 @@ class ContentAnalysisAgent:
                     - Engagement consistency: {df['engagement'].std() / df['engagement'].mean():.2f}
                 """
         return summary
+
+
 
     def categorize_tweet(self, text: str) -> str:
         """Categorize tweet by content type"""
