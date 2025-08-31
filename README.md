@@ -2,6 +2,8 @@
 
 An intelligent Twitter/X profile analyzer powered by LangChain, OpenAI, and advanced analytics. Analyze any public Twitter profile to get comprehensive insights about content strategy, engagement patterns, reply behavior, and actionable recommendations.
 
+![Demo](Untitled%20design.gif)
+
 ## ✨ Features
 
 ### 🔍 **Comprehensive Analysis**
